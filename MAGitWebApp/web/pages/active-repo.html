@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/third-parties/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../js/third-parties/popper.min.js"></script>
+    <script type="text/javascript" src="../js/third-parties/bootstrap.min.js"></script>
+    <script type="module" src="../js/magit/header.js"></script>
+    <script type="module" src="../js/magit/active-repo.js"></script>
+    <title>MAGit</title>
+</head>
+<body>
+<div class="Container">
+    <div class="Header">
+        <div class="Header-icon Header-item">
+            <img class="icon" src="../assets/MAGit.png" alt="magit-icon"/>
+            <span class="Link" id="home-link">Home</span>
+            <span class="Link" id="explore-link">Explore</span>
+        </div>
+        <div id="header-drop-downs">
+        <nav>
+            <ul>
+                <li>
+                    <div>
+                        <div class="Header-item">
+                            <img class="Notification-icon" src="../assets/notification-icon.svg" alt="notifications"/><div id="notifications-counter-container"></div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><div id="notifications-container"></div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="Repo-options Header-item">
+                        <div class="Options-plus-sign">
+                            <div class="Bar Horizontal"></div>
+                            <div class="Bar Vertical"></div>
+                        </div>
+                        <span class="Dropdown-caret Repo"></span>
+                    </div>
+                    <ul>
+                        <li><a id="import-repo-xml" class="Link">Import repository from xml</a></li>
+                        <li><a id="create-new-repo" class="Link">Create empty repository</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="User-options Header-item">
+                        <img class="icon" src="../assets/user-icon.png" alt="user-icon"/>
+                        <span class="Dropdown-caret"></span>
+                    </div>
+                    <ul>
+                        <li><a id="my-profile" href="profile.html">My profile</a></li>
+                        <li><a class="Link" id="logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </div>
+    <div class="Content">
+        <div class="Repo-nav">
+            <div class="Repo-name Magit-body"></div>
+            <ul class="Nav-bar-tabs nav nav-tabs Magit-body" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="code-tab" data-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="true"><> Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="code-editor-tab" data-toggle="tab" href="#code-editor" role="tab" aria-controls="code-editor" aria-selected="false">Editor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="diff-tab" data-toggle="tab" href="#diff" role="tab" aria-controls="diff-tab" aria-selected="false">Difference</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pull-requests-tab" data-toggle="tab" href="#pull-requests" role="tab" aria-controls="pull-requests-tab" aria-selected="false">Pull Requests</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content Magit-body">
+            <div class="tab-pane fade show active" id="code" role="tabpanel" aria-labelledby="code-tab">
+                <div id="repo-details">
+                    <div id="branches-count" class="repo-detail"></div>
+                    <div id="commits-count" class="Link repo-detail"></div>
+                    <div class="Separator Green"></div>
+                </div>
+                <div id="commits-header-title"></div>
+                <div id="last-commit-content">
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="code-editor" role="tabpanel" aria-labelledby="code-editor-tab">
+                <div id="wc-actions">
+                    <button id="btn-create-file" type="button">Create File</button>
+                    <button id="btn-commit" type="button">Commit</button>
+                </div>
+                <div id="wc-files-list">
+
+                </div>
+            </div>
+            <div class="tab-pane fade clearfix" id="diff" role="tabpanel" aria-labelledby="diff-tab">
+
+            </div>
+            <div class="tab-pane fade" id="pull-requests" role="tabpanel" aria-labelledby="pull-requests-tab">
+                <div id="pull-requests-list">
+                    <div id="empty-pull-requests">You have no pull requests</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
