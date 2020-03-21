@@ -1,0 +1,2 @@
+# MyAmazingGIT
+Implementation of Git
